@@ -5,4 +5,11 @@ services:
 script:
   - docker build -t dhamorocker/node .
   - docker images dhamorocker/node
-  
+before_deploy:
+  - dockewr login -u dhamorocker -p Docker@123
+
+deploy:
+  provider: script
+  script: docker push dhamorocker/node
+  on:
+    branch: master
