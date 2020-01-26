@@ -1,0 +1,8 @@
+sudo: required
+services:
+  - docker
+
+script:
+  - docker build -t dhamorocker/node .
+  - docker images dhamorocker/node
+  
